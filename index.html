@@ -5,6 +5,7 @@
   <title>YourApp Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/toggle-switch.css" />
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,400,700" rel="stylesheet">
 </head>
@@ -42,29 +43,217 @@
             <li>Monthly</li>
           </ul>
           <div class="chart-line">
-            <canvas id="linechart" width="300" height="300"></canvas>
+            <canvas id="linechart" width="300" height="150"></canvas>
           </div>
         </div>
         <div class="daily-traffic">
           <h3 class="widget-title">Daily Traffic</h3>
+          <div class="chart-bar">
+            <canvas id="barchart" width="300" height="150"></canvas>
+          </div>
         </div>
         <div class="mobile-users">
           <h3 class="widget-title">Mobile Users</h3>
+          <div class="chart-pie">
+            <canvas id="piechart" width="300" height="150"></canvas>
+          </div>
         </div>
         <div class="social-stats">
           <h3 class="widget-title">Social Stats</h3>
+          <div class="social-box">
+            <div class="social-logo">
+              twitter logo
+            </div>
+            <div class="social-name-numbers">
+              <table>
+                <tr>
+                  <th>Twitter</th>
+                </tr>
+                <tr>
+                  <td>10,345</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="social-box">
+            <div class="social-logo">
+              facebook logo
+            </div>
+            <div class="social-name-numbers">
+              <table>
+                <tr>
+                  <th>Facebook</th>
+                </tr>
+                <tr>
+                  <td>8,739</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="social-box">
+            <div class="social-logo">
+              google+ logo
+            </div>
+            <div class="social-name-numbers">
+              <table>
+                <tr>
+                  <th>Google+</th>
+                </tr>
+                <tr>
+                  <td>2,530</td>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
+
         <div class="new-members">
           <h3 class="widget-title">New Members</h3>
+          <ul class="members-list">
+            <li class="member">
+              <img src="" alt="">
+              <table>
+                <tr>
+                  <th class="member-name">Victoria Chambers</th>
+                </tr>
+                <tr>
+                  <td><a href="mailto:example@example.com">victoriachambers@example.com</a></td>
+                </tr>
+              </table>
+              <div class="member-join-date">10/15/15</div>
+            </li>
+            <li class="member">
+              <img src="" alt="">
+              <table>
+                <tr>
+                  <th class="member-name">Dale Byrd</th>
+                </tr>
+                <tr>
+                  <td><a href="mailto:example@example.com">dalebyrd@example.com</a></td>
+                </tr>
+              </table>
+              <div class="member-join-date">10/15/15</div>
+            </li>
+            <li class="member">
+              <img src="" alt="">
+              <table>
+                <tr>
+                  <th class="member-name">Dawn Wood</th>
+                </tr>
+                <tr>
+                  <td><a href="mailto:example@example.com">dawnwood@example.com</a></td>
+                </tr>
+              </table>
+              <div class="member-join-date">10/15/15</div>
+            </li>
+            <li class="member">
+              <img src="" alt="">
+              <table>
+                <tr>
+                  <th class="member-name">Dan Oliver</th>
+                </tr>
+                <tr>
+                  <td><a href="mailto:example@example.com">danoliver@example.com</a></td>
+                </tr>
+              </table>
+              <div class="member-join-date">10/15/15</div>
+            </li>
+          </ul>
         </div>
         <div class="recent-activity">
           <h3 class="widget-title">Recent Activity</h3>
+          <ul class="members-list">
+            <li class="member">
+              <img src="" alt="">
+              <table>
+                <tr>
+                  <th class="member-name">Victoria Chambers</th>
+                </tr>
+                <tr>
+                  <td>4 hours ago</td>
+                </tr>
+              </table>
+              <div class="more-arrow">arrow</div>
+            </li>
+            <li class="member">
+              <img src="" alt="">
+              <table>
+                <tr>
+                  <th class="member-name">Dale Byrd</th>
+                </tr>
+                <tr>
+                  <td>5 hours ago</td>
+                </tr>
+              </table>
+              <div class="more-arrow">arrow</div>
+            </li>
+            <li class="member">
+              <img src="" alt="">
+              <table>
+                <tr>
+                  <th class="member-name">Dawn Wood</th>
+                </tr>
+                <tr>
+                  <td>5 hours ago</td>
+                </tr>
+              </table>
+              <div class="more-arrow">arrow</div>
+            </li>
+            <li class="member">
+              <img src="" alt="">
+              <table>
+                <tr>
+                  <th class="member-name">Dan Oliver</th>
+                </tr>
+                <tr>
+                  <td>1 day ago</td>
+                </tr>
+              </table>
+              <div class="more-arrow">arrow</div>
+            </li>
+          </ul>
         </div>
         <div class="message-user">
           <h3 class="widget-title">Message User</h3>
+          <input id="usersearch" type="text" name="user-search" placeholder="Search for User">
+          <textarea id="usermessage" name="user-message" placeholder="Message for User"></textarea>
+          <button type="button" name="message-send-button">Send</button>
         </div>
         <div class="settings">
           <h3 class="widget-title">Settings</h3>
+          <ul>
+            <li>
+              <div>Send Email Notifications</div>
+              <label class="switch-light switch-ios" onclick="">
+                <input type="checkbox">
+                <span>
+                  <span>Off</span>
+                  <span>On</span>
+                  <a></a>
+                </span>
+              </label>
+            </li>
+            <li>
+              <div>Set Profile to Public</div>
+              <label class="switch-light switch-ios" onclick="">
+                <input type="checkbox">
+                <span>
+                  <span>Off</span>
+                  <span>On</span>
+                  <a></a>
+                </span>
+              </label>
+            </li>
+          </ul>
+          <select id="timezone" name="timezone">
+            <option value="" selected="selected">Select Timezone</option>
+            <option value="PST">Pacific Time</option>
+            <option value="MST">Mountain Time</option>
+            <option value="CST">Central Time</option>
+            <option value="EST">Eastern Time</option>
+          </select>
+          <button type="button" name="save">Save</button>
+          <button type="button" name="cancel">Cancel</button>
         </div>
       </div> <!--End main-content-->
     </div> <!--End main-body-->
