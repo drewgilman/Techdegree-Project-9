@@ -388,47 +388,55 @@
             </ul>
           </div>
         </div>
-        <div class="message-user">
-          <h3 class="widget-title">Message User</h3>
-          <input id="usersearch" type="text" name="user-search" placeholder="Search for User">
-          <textarea id="usermessage" name="user-message" placeholder="Message for User"></textarea>
-          <button type="button" name="message-send-button">Send</button>
-        </div>
-        <div class="settings">
-          <h3 class="widget-title">Settings</h3>
-          <ul>
-            <li>
-              <div>Send Email Notifications</div>
-              <label class="switch-light switch-ios" onclick="">
-                <input type="checkbox">
-                <span>
-                  <span>Off</span>
-                  <span>On</span>
-                  <a></a>
-                </span>
-              </label>
-            </li>
-            <li>
-              <div>Set Profile to Public</div>
-              <label class="switch-light switch-ios" onclick="">
-                <input type="checkbox">
-                <span>
-                  <span>Off</span>
-                  <span>On</span>
-                  <a></a>
-                </span>
-              </label>
-            </li>
-          </ul>
-          <select id="timezone" name="timezone">
-            <option value="" selected="selected">Select Timezone</option>
-            <option value="PST">Pacific Time</option>
-            <option value="MST">Mountain Time</option>
-            <option value="CST">Central Time</option>
-            <option value="EST">Eastern Time</option>
-          </select>
-          <button type="button" name="save">Save</button>
-          <button type="button" name="cancel">Cancel</button>
+        <div class="contact-settings-container">
+          <div class="message-user">
+            <h3 class="widget-title">Message User</h3>
+            <!-- <div class="message-user-container"> -->
+              <input id="usersearch" type="text" name="user-search" placeholder="Search for User">
+              <textarea id="usermessage" name="user-message" placeholder="Message for User"></textarea>
+              <button type="button" name="message-send-button">Send</button>
+            <!-- </div> -->
+          </div>
+          <div class="settings">
+            <h3 class="widget-title">Settings</h3>
+            <div class="setting-selection">
+              <p>Send Email Notifications</p>
+              <div class="toggle-switch">
+                <label class="switch-light switch-ios" onclick="">
+                  <input type="checkbox">
+                  <span>
+                    <span>Off</span>
+                    <span>On</span>
+                    <a></a>
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="setting-selection">
+              <p>Set Profile to Public</p>
+              <div class="toggle-switch">
+                <label class="switch-light switch-ios" onclick="">
+                  <input type="checkbox">
+                  <span>
+                    <span>Off</span>
+                    <span>On</span>
+                    <a></a>
+                  </span>
+                </label>
+              </div>
+            </div>
+            <select id="timezone" name="timezone" required>
+              <option value="" disabled selected>Select Timezone</option>
+              <option value="PST">Pacific Time</option>
+              <option value="MST">Mountain Time</option>
+              <option value="CST">Central Time</option>
+              <option value="EST">Eastern Time</option>
+            </select>
+            <div class="settings-buttons">
+              <button id="savebutton" type="button" name="save">Save</button>
+              <button id="cancelbutton" type="button" name="cancel">Cancel</button>
+            </div>
+          </div>
         </div>
       </div> <!--End main-content-->
     </div> <!--End main-body-->

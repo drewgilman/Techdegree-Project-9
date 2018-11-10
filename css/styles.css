@@ -7,8 +7,11 @@ Dark Purple: #4d4c72
 /* Global Layout Set-up */
 * {
   box-sizing: border-box;
-
-  outline: 1px red solid;
+  color: #2E2E2E;
+  /* outline: 1px red solid; */
+}
+*:focus{
+  outline: none;
 }
 
 body {
@@ -41,7 +44,12 @@ header,
 .daily-mobile-container,
 .member,
 .member-info-container,
-.member-area-container {
+.member-area-container,
+.contact-settings-container,
+.message-user,
+.settings,
+.settings-buttons,
+.setting-selection {
   display: flex;
 }
 .traffic,
@@ -49,33 +57,40 @@ header,
 .mobile-users,
 .social-stats,
 .new-members,
-.recent-activity{
+.recent-activity,
+.message-user,
+.settings{
   padding: 1em;
 }
-/* GENERAL TYPOGRAPHY */
+/* GENERAL TYPOGRAPHY ----------------------------------------------*/
 .widget-title{
   font-size: 1em;
   font-weight: normal;
   text-transform: uppercase;
   margin:0;
+  padding: .5em 0;
   color: #2E2E2E;
 }
-/* HEADER */
+/* HEADER---------------------------------------------------------- */
 
 header{
   justify-content: space-between;
   background-color: #7477bf;
-  color: white;
   height: 75px;
+}
+header *{
+  color: white;
 }
 h1 span{
   font-size: .5em;
   vertical-align: super;
+
 }
 h1{
   font-weight: 200;
   margin: 0 .5em;
   line-height: 65px;
+
 
 }
 .user-area{
@@ -99,7 +114,7 @@ h1{
   font-weight: 200;
 }
 
-/* NAVIGATION */
+/* NAVIGATION-------------------------------------------------------------- */
 .main-body{
   flex-direction: column;
 }
@@ -126,7 +141,7 @@ h1{
   padding: .5em;
   width: 100%;
 }
-/* DASHBOARD TAB/SEARCH */
+/* DASHBOARD TAB/SEARCH---------------------------------------------------- */
 .dashboard-tab{
   flex-direction: column;
   align-items: stretch;
@@ -177,28 +192,29 @@ h1{
   fill: #4d4c72;
 
 }
-/* ALERT MESSAGE */
+/* ALERT MESSAGE--------------------------------------------------------- */
 .alertbox{
   justify-content: space-between;
   margin: 1em;
   background-color: #7477bf;
   border-radius: 5px;
 }
+.alertbox *{
+  color: white;
+}
 .alert{
   display: inline-block;
-  color: white;
   margin: 1em;
 }
 .alert-close{
   background-color: transparent;
-  color: white;
   border: none;
   padding: 0 1em;
   outline: none;
 
 }
 
-/* CHARTS */
+/* CHARTS---------------------------------------------------------------- */
 .traffic,
 .daily-mobile-container{
   border-bottom: 1px lightgrey solid;
@@ -208,9 +224,9 @@ h1{
 .traffic-settings h3{
   display: inline-block;
 }
-.traffic-settings h3{
+/* .traffic-settings h3{
   line-height: 51px;
-}
+} */
 
 .traffic-settings,
 .daily-mobile-container{
@@ -222,7 +238,7 @@ h1{
 }
 .line-chart-scope li{
   padding: .5em 1em;
-  margin: .8em .25em;
+  margin: .4em;
   border-radius: 32%/50%;
   font-size: .8em;
   font-weight: bold;
@@ -230,7 +246,7 @@ h1{
   cursor: pointer;
 }
 
-/* SOCIAL STATS */
+/* SOCIAL STATS --------------------------------------------------------*/
 .social-box-container{
   justify-content: space-between;
   flex-direction: row;
@@ -277,7 +293,7 @@ h1{
   line-height: 25px;
   text-align: left;
 }
-/* MEMBER AREA */
+/* MEMBER AREA------------------------------------------------------------ */
 .member-area-container{
   flex-direction: column;
   border-top:1px lightgrey solid;
@@ -289,9 +305,6 @@ h1{
   margin-left: .75em;
 }
 
-.recent-activity{
-  border-left: 1px lightgrey solid;
-}
 .member td,
 .member a{
   font-size: .75rem;
@@ -315,10 +328,92 @@ h1{
   stroke: #7477bf;
   margin: 11.5px 0;
 }
+.member-join-date{
+  line-height: 43px;
+}
+
+/* MESSAGE USER AREA------------------------------------------------------ */
+.contact-settings-container{
+  flex-direction: column;
+}
+.message-user,
+.settings{
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+#usersearch,
+#usermessage,
+#timezone,
+.message-user button{
+  width: 100%;
+  padding: .5em;
+  margin: .5em 0;
+}
+#usersearch,
+#usermessage,
+#timezone{
+  border: 1px lightgrey solid;
+  border-radius: 5px;
+  background-color: #fbfbfb;
+}
+#timezone:required:invalid {
+  color: gray;
+}
+#timezone option[value=""][disabled] {
+  display: none;
+}
+#timezone option {
+  color: black;
+}
+#usermessage{
+  height:150px;
+}
+.message-user button,
+#savebutton,
+#cancelbutton{
+  border:none;
+  border-radius: 5px;
+  background-color: #7477bf;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.settings-buttons{
+  flex-direction: row;
+  justify-content: space-between;
+}
+#savebutton,
+#cancelbutton{
+  width: 45%;
+  padding: .5em;
+  margin: .5em 0;
+}
+#cancelbutton{
+  background-color: silver;
+}
+.toggle-switch{
+  width: 100px;
+  padding: .4em 0;
+}
+
+.setting-selection{
+  margin: .5em 0;
+}
+.setting-selection p{
+  line-height: 28.8px;
+  margin: 0;
+  padding: .5em 0 ;
+  width: 230px;
+}
+
+
+
 
 
 @media (min-width: 768px) {
-  /* HEADER */
+  /* HEADER----------------------------------------------------------------- */
   .user-area{
     width: 275px;
   }
@@ -331,7 +426,7 @@ h1{
     max-width: 75%;
     margin: 0 auto;
   }
-  /* DASHBOARD TAB/SEARCH */
+  /* DASHBOARD TAB/SEARCH--------------------------------------------------- */
   .dashboard-tab{
     flex-direction: row;
     align-items: stretch;
@@ -349,7 +444,7 @@ h1{
     margin: 0 1em;
     line-height: 64px;
   }
-  /* CHARTS */
+  /* CHARTS----------------------------------------------------------------- */
   .traffic-settings{
     flex-direction: row;
   }
@@ -364,7 +459,7 @@ h1{
   .mobile-users{
     border-left: 1px solid lightgrey;
   }
-  /* MEMBER AREA */
+  /* MEMBER AREA -----------------------------------------------------------*/
   .member-area-container{
     flex-direction: row;
   }
@@ -372,9 +467,24 @@ h1{
   .recent-activity{
     flex-grow: 1;
     width: 50%;
-
+  }
+  .recent-activity{
+    border-left: 1px lightgrey solid;
   }
 
+  /* MESSAGE USER & SETTINGS AREA----------------------------------------- */
+  .contact-settings-container{
+    flex-direction: row;
+  }
+
+  .message-user,
+  .settings{
+    flex-grow: 1;
+    width: 50%;
+  }
+  .settings{
+    border-left: 1px lightgrey solid;
+  }
 
 }
 
